@@ -1,0 +1,652 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #2B2B2B; /* Add a background color for better contrast */
+
+}
+
+.navbar-container {
+    text-align: center;
+    position: fixed;
+    max-width: fit-content; /* Set a maximum width for responsiveness */
+    margin: 0 auto; /* Center the navbar horizontally */
+    margin-top: 10px;
+    margin-left: 50%;
+    background-color: #5B5B5B;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    z-index: 1;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+}
+
+.nav-menu a:hover {
+    color: #b8f5eb;
+}
+
+.toggle-button {
+    display: block; /* Always visible */
+    cursor: pointer;
+}
+
+/* Add these styles to your existing CSS */
+
+/* Add these styles to your existing CSS */
+
+/* Add these styles to your existing CSS */
+
+.toggle-button span {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+    transition: transform 0.3s ease-out, opacity 0.3s;
+}
+
+.navbar-container:hover .toggle-button span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.navbar-container:hover .toggle-button span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-container:hover .toggle-button span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
+
+.navbar-container:hover .toggle-button span:nth-child(1),
+.navbar-container:hover .toggle-button span:nth-child(3) {
+    transition-delay: 0.2s; /* Delay the rotation of the first and third spans */
+}
+
+.toggle-button span:nth-child(1).hidden,
+ .toggle-button span:nth-child(3).hidden {
+    display: none; /* Hide spans after rotation */
+}
+
+
+
+/* Add these styles to your existing CSS */
+
+.nav-menu {
+    display: none; /* Hide menu initially */
+    opacity: 0;
+    transform: translateY(-20px); /* Move menu up initially */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.show-menu {
+    display: flex; /* Show menu on hover */
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 0.5s ease-out forwards; /* Apply fadeIn animation */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* style.css */
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100vh; /* Set a minimum height for the hero section */
+  }
+  
+  .hero-text {
+    width: 800px;
+    padding: 30px;
+    text-align: left;
+    color: #c5c5c5;
+    font-size: 3em;
+    margin-left: 40px;
+  }
+
+  .hero-text h1 {
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.hero-text .first-text{
+    font-size: 32px;
+    color: #168473;
+    margin: 0;
+}
+
+.hero-text span{
+    color: #26debe;
+    border-right: 2px solid #c5c5c5; 
+
+}
+  
+  .hero-image img {
+    width: 500px; /* Adjust image width as needed */
+    height: auto; /* Maintain image aspect ratio */
+    object-fit: cover; /* Ensure image fills the container */
+    margin-right: 40px;
+  }
+  
+  #typingSpan {
+    border-right: 2px solid #c5c5c5; 
+    animation: typingAnimation 0.5s steps(20, end) infinite; /* Typing animation */
+}
+
+@keyframes typingAnimation {
+    from {
+        border-color: transparent; /* Start with no border color */
+    }
+    to {
+        border-color: #000; /* End with solid black border */
+    }
+}
+
+
+  
+  .skills-main-container {
+    text-align: start;
+}
+
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.skills-main-container h1,
+.project-main-container h2{
+    color: #26debe;
+    letter-spacing: 1px;
+    font-size: 45px;
+    margin-left: 8%;
+}
+
+.skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: calc(50% - 20px); /* Half width with some spacing */
+    margin-bottom: 20px;
+}
+
+.skill-box {
+    width: fit-content;
+    padding-right: 80px;
+    text-align: center;
+    /* Space for the skill bar */
+}
+
+.skill-name {
+    color: #c5c5c5;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    transform: translateX(-50%);
+    width: 200px; /* Width of the skill bar */
+    height: 8px;
+    background-color: #36474e;
+}
+
+
+
+.skill-level {
+    height: 100%;
+    background-color: #168473; /* Adjust color as needed */
+    transition: width 0.5s; /* Smooth transition for width change */
+    transform-origin: left center; /* Set the transform origin to the left */
+    animation: slideRight 0.5s forwards; /* Apply slide left animation */
+
+}
+
+.skill-level.slideleft {
+    height: 100%;
+    background-color: #168473; /* Adjust color as needed */
+    transition: width 0.5s; /* Smooth transition for width change */
+    transform-origin: left center;
+    animation: slideLeft 0.5s forwards; /* Apply slide left animation */
+}
+
+@keyframes slideLeft {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+@keyframes slideRight {
+    from {
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(0);
+    }
+}
+
+
+
+.project-main-container{
+    text-align: start;
+}
+
+
+
+.projects-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 80px;
+    overflow: hidden;
+    height: 60vh;
+}
+
+.project {
+    width: 48%;
+    margin-bottom: 20px;
+}
+.project-details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project img {
+    width: 50%;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+    border-radius: 15px;
+    min-height: 300px;
+}
+
+.projects-container .project {
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.projects-container.slide-down .project {
+    transform: translateY(0%);
+}
+
+.text-details {
+    display: none; /* Hide text details by default */
+}
+.text-details{
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: start;
+    width: 300px;
+    min-height: 250px;
+    cursor: pointer;
+}
+
+.text-details h3{
+    color: #26debe;
+}
+
+.text-details p{
+    color: #168473;
+}
+
+/* CSS animation for flipping the image */
+@keyframes flipImageAnimation {
+    0% {
+        transform: rotateY(180deg);
+        visibility: hidden;
+    }
+    100% {
+        transform: rotateY(0deg);
+        visibility: visible;
+    }
+}
+
+@keyframes flipTextAnimation {
+    0% {
+        transform: rotateY(180deg);
+        visibility: hidden;
+    }
+    100% {
+        transform: rotateY(0deg);
+        visibility: visible;
+    }
+}
+
+.project img {
+    animation: flipImageAnimation 0.5s ease-in-out forwards;
+}
+
+.text-details {
+    animation: flipTextAnimation 0.5s ease-in-out forwards;
+}
+
+
+
+
+.view-more-button {
+    background-color: transparent;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #b8f5eb;
+    letter-spacing: 1px;
+    margin-left: 7%;
+    transition: background-color 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.view-more-button:hover{
+    color: #26debe;
+}
+
+.project-main-container h2{
+    margin-bottom: 15px;
+}
+.contact-section {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px 0;
+    width: 75%;
+    margin: auto;
+}
+
+.left-section {
+    text-align: start;
+    padding: 20px;
+}
+
+.left-section h2{
+    color: #26debe;
+    letter-spacing: 1px;
+    font-size: 45px;
+    margin: 0;
+}
+
+.left-section p{
+    color: #168473;
+}
+
+.left-section a{
+    color: #168473;
+    text-decoration: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.right-section {
+    text-align: start;
+    padding: 20px;
+}
+
+.right-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.right-section li {
+    margin-bottom: 15px;
+    color: #168473;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+
+.right-section li i {
+    margin-right: 20px;
+    font-size: 28px;
+    color: #26debe;
+
+}
+
+
+.footer-section {
+    background-color: #12695c;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.work-together {
+    margin-bottom: 30px;
+}
+
+.credits{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-top: 50px;
+    gap: 10px;
+}
+
+.credits p {
+    font-size: 10px;
+    color: #26debe;
+    margin: 5px 0;
+    margin-bottom: 0;
+}
+
+
+@media screen and (min-width: 1000px) and (max-width: 1400px) {
+
+    
+    .navbar-container {
+        margin-left: 50%;
+    }
+
+    .hero-image img {
+        width: 250px;
+        margin-right: 100px;
+    }
+    .hero-text h1 {
+        font-size: 75px;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-top: 15px;
+    }
+
+    .skill-box {
+        width: 130px;
+        text-align: start;
+        font-size: 12px;
+    }
+
+    .skill-bar {
+        transform: translateX(0%);
+        width: 160px;
+    }
+
+    .project img {
+        min-height: 260px;
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width: 1000px) {
+    .hero-image img {
+        width: 150px;
+        margin-right: 100px;
+    }
+    .hero-text h1 {
+        font-size: 50px;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-top: 15px;
+    }
+    .hero-text .first-text {
+        font-size: 22px;
+    }
+
+    .nav-menu a {
+        font-size: 14px;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px;
+    }
+
+    .toggle-button span {
+        width: 18px;
+        margin: 4px;
+    }
+    .skills-container {
+        width: -1px;
+        padding: 30px;
+    }
+    .skill-box {
+        padding: 0;
+        width: 120px;
+        text-align: start;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .skill-bar {
+        transform: translateX(0%);
+        width: 150px;
+    }
+    .skill-name {
+        color: #c5c5c5;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .skill-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-basis: calc(50% - 60px);
+        margin-bottom: 20px;
+        width: 500px;
+    }
+    .project img {
+        min-height: 200px;
+    }
+    .text-details h3 {
+        color: #26debe;
+        font-size: 18px;
+    }
+    .text-details p {
+        color: #168473;
+        font-size: 14px;
+    }
+
+}
+@media screen and (max-width: 750px){
+    .hero-image img {
+        display: none;
+        width: 150px;
+        margin-right: 100px;
+    }
+
+    .hero-text h1 {
+        font-size: 40px;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-top: 15px;
+    }
+    .hero-text .first-text {
+        font-size: 18px;
+    }
+
+    .skills-container {
+        width: auto;
+        padding: 30px;
+        margin: auto;
+        margin-left: 43px;
+    }
+    .skill-box {
+        padding: 0;
+        width: 120px;
+        text-align: start;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .skill-bar {
+        transform: translateX(0%);
+        width: 150px;
+    }
+    .skill-name {
+        color: #c5c5c5;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .skill-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-basis: calc(50% - 60px);
+        margin-bottom: 20px;
+        width: 500px;
+        gap: 20px;
+    }
+
+    .projects-container{
+        height: max-content;
+    }
+    .contact-section {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 50px 0;
+        width: 75%;
+        margin: auto;
+    }
+    .work-together h2{
+        font-size: 20px;
+    }
+    .work-together p{
+        font-size: 12px;
+    }
+    .project img {
+        width: 100%;
+    }
+
+    
+}
